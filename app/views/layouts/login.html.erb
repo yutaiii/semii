@@ -1,0 +1,8 @@
+<div class="users_login_wrapper">
+  <div class="users_login_form">
+    <%= form_for(@user) do |f| %>
+      <%= f.label :password %>
+      <%= f.password :password, class: 'form_text' %>
+    <% end %>
+  </div>
+</div>
