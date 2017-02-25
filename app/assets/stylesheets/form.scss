@@ -1,0 +1,33 @@
+@import 'variable';
+
+.form {
+  &_container {
+    width: 100%;
+    position: relative;
+    font-size: 16px;
+  }
+
+  &_textfield {
+    height: 40px;
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    margin-bottom: 10px;
+  }
+
+  &_message {
+    color: #cc0000;
+  }
+
+  &_btn {
+    &_wrapper {
+      margin: 10px 0;
+    }
+
+    &_submit {
+      color: #fff;
+      background: $themeColor;;
+    }
+  }
+}
