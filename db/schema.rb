@@ -14,54 +14,54 @@
 ActiveRecord::Schema.define(version: 20170125095834) do
 
   create_table "departments", force: :cascade do |t|
-    t.string   "name",       limit: 255
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "faculties", force: :cascade do |t|
-    t.string   "name",          limit: 255
-    t.integer  "department_id", limit: 4
+    t.string   "name"
+    t.integer  "department_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "graducations", force: :cascade do |t|
-    t.string   "year",       limit: 255
+    t.string   "year"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "seminars", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.integer  "teacher_id", limit: 4
+    t.string   "name"
+    t.integer  "teacher_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "teachers", force: :cascade do |t|
-    t.string   "name",       limit: 255
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "theses", force: :cascade do |t|
-    t.string   "title",         limit: 255
-    t.integer  "semianr_id",    limit: 4
-    t.integer  "graduation_id", limit: 4
-    t.string   "key_words",     limit: 255
-    t.text     "description",   limit: 65535
-    t.text     "data",          limit: 65535
+    t.string   "title"
+    t.integer  "semianr_id"
+    t.integer  "graduation_id"
+    t.string   "key_words"
+    t.text     "description"
+    t.text     "data"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",          limit: 255
-    t.string   "password",      limit: 255
-    t.integer  "faculty_id",    limit: 4
-    t.integer  "department_id", limit: 4
-    t.integer  "seminar_id",    limit: 4
+    t.string   "name"
+    t.string   "password"
+    t.integer  "faculty_id"
+    t.integer  "department_id"
+    t.integer  "seminar_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
