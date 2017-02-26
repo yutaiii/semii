@@ -1,0 +1,25 @@
+@import 'variable';
+
+.title {
+  text-align: center;
+  &:after {
+    width: 50%;
+    content: '';
+    display: block;
+    border-bottom: 1px solid #eee;
+    margin: 20px auto;
+  }
+}
+
+.button {
+  height: 40px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #eee;
+  font-weight: bold;
+  transition: 0.3s;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}

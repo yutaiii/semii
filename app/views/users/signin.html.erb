@@ -1,0 +1,22 @@
+<div class="signin_container">
+  <h2 class="title">ログイン</h2>
+  <div class="form_container">
+    <%= form_for @user, url: {action: 'signin'} do |f| %>
+    <dl>
+      <dt>
+        ユーザー名
+        <span class="form_message"></span>
+      </dt>
+      <dd><%= f.text_field :name, class: 'form_textfield', placeholder: 'ユーザー名' %></dd>
+      <dt>
+        パスワード
+        <span class="form_message"></span>
+      </dt>
+      <dd><%= f.text_field :password, class: 'form_textfield', placeholder: 'パスワード' %></dd>
+      <div class="form_btn_wrapper">
+        <%= f.submit 'ログイン', class: 'button form_btn_submit' %>
+      </div>
+    </dl>
+    <% end %>
+  </div>
+</div>

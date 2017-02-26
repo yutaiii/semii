@@ -1,0 +1,75 @@
+@import 'variable';
+
+.main_container {
+  width: 100%;
+  position: relative;
+}
+
+//  header ==========================
+
+.header {
+  height: 50px;
+  width: 100%;
+  position: relative;
+  top: 0px;
+  background: $themeColor;;
+  &_icon {
+    height: 50px;
+    color: #fff;
+    position: relative;
+    top: 0;
+    left: 0;
+
+    &_title {
+      height: 50px;
+      width: 200px;
+      font-size: 25px;
+      font-weight: bold;
+      text-align: center;
+      margin: auto;
+      padding: 7px 10px;
+      & a {
+        color: #fff;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+    &_message {
+      float: left;
+    }
+  }
+
+  &_menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    &_elements {
+      height: 50px;
+      min-width: 100px;
+      text-align: center;
+      float: left;
+
+      & a {
+        color: #fff;
+        display: block;
+        height: inherit;
+        width: inherit;
+        padding: 15px 20px;
+        transition: 0.2s;
+
+        &:hover {
+          background: #00bfff;
+          font-size: 16px;
+          padding: 13px 15px;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+// ================================
