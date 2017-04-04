@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'users/sign_in', to: 'users#signin'
+  get 'users/sign_up', to: 'users#signup'
   root 'mypages#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
