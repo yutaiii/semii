@@ -13,12 +13,13 @@ class UsersController < ApplicationController
 
   def signup
     @user = User.new
-    # @user = User.save(signup_params)
+  #   @user = User.save(signup_params)
   end
 
-  # private
-  # def signup_params
-  #   params.require(:user).permit(:name, :password, :faculty_id, :department_id, :seminar_id)
-  # end
+ #  private
+ #  def signup_params
+ #    if params.empty?
+ #    params.require(:user).permit(:name, :password, :faculty_id, :department_id, :seminar_id)
+ #  end
 
 end
