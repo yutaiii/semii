@@ -30,6 +30,7 @@
       padding: 7px 10px;
       & a {
         color: #fff;
+        transition: 0.2s;
 
         &:hover {
           text-decoration: none;
@@ -62,7 +63,7 @@
         transition: 0.2s;
 
         &:hover {
-          background: #00bfff;
+          background: $lightBlue;
           font-size: 16px;
           padding: 13px 15px;
           text-decoration: none;

@@ -28,6 +28,11 @@
     &_submit {
       color: #fff;
       background: $themeColor;;
+
+      &:hover {
+        background: $lightBlue;
+        opacity: 1;
+      }
     }
   }
 }
