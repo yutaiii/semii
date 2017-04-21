@@ -5,6 +5,25 @@
   position: relative;
 }
 
+.image_background {
+  z-index: 1;
+  position: relative;
+  height: 660px;
+  width: 100%;
+  background-image: image-url('topimage.jpg');
+  background-size: cover;
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+  }
+}
+
 //  header ==========================
 
 .header {

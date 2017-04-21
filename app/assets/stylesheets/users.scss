@@ -8,13 +8,16 @@
   &_container {
     width: 500px;
     position: absolute;
-    top: 80px;
+    top: 100px;
     right: 0;
     left: 0;
     margin: 0 auto;
     padding: 15px 30px;
-    @include boxBorder;
+    border-radius: 10px;
+    // @include boxBorder;
     background: #f2f2f2;
+    z-index: 2;
+    text-align: center;
   }
 }
 
