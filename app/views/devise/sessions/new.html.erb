@@ -1,0 +1,27 @@
+<div class="image_background">
+  <div class="signin_container">
+    <h2 class="title">ログイン</h2>
+    <div class="form_container">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="field">
+            <%= f.text_field :name, class: 'form_textfield', autofocus: true, placeholder: 'ユーザー名', presence: true %>
+        </div>
+
+        <div class="field">
+            <%= f.password_field :password,  class: 'form_textfield', autocomplete: "off", placeholder: 'パスワード', presence: true %>
+        </div>
+
+        <% if devise_mapping.rememberable? -%>
+          <div class="field">
+              <%= f.check_box :remember_me %>
+              <%= f.label 'ユーザー名とパスワードを記憶する' %>
+          </div>
+        <% end -%>
+
+        <div class="form_btn_submit">
+            <%= f.submit "ログイン", class: 'button form_btn_submit' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

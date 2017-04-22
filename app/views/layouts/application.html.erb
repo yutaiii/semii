@@ -5,10 +5,21 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= favicon_link_tag %>
 </head>
 <body>
   <%= render 'layouts/header' %>
   <div class="main_container">
+    <% if notice %>
+      <p class="flash_message flash_message_notice">
+        <%= notice %>
+      </p>
+    <% end %>
+    <% if alert %>
+      <p class="flash_message flash_message_alert">
+        <%= alert %>
+      </p>
+    <% end %>
     <%= yield %>
   </div>
 </body>

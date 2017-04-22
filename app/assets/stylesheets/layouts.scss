@@ -5,6 +5,25 @@
   position: relative;
 }
 
+.image_background {
+  z-index: 1;
+  position: relative;
+  height: 660px;
+  width: 100%;
+  background-image: image-url('topimage.jpg');
+  background-size: cover;
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+  }
+}
+
 //  header ==========================
 
 .header {
@@ -30,6 +49,7 @@
       padding: 7px 10px;
       & a {
         color: #fff;
+        transition: 0.2s;
 
         &:hover {
           text-decoration: none;
@@ -62,7 +82,7 @@
         transition: 0.2s;
 
         &:hover {
-          background: #00bfff;
+          background: $lightBlue;
           font-size: 16px;
           padding: 13px 15px;
           text-decoration: none;
@@ -72,4 +92,28 @@
   }
 }
 
+// ================================
+
+// フラッシュメッセージ===============
+.flash_message {
+  width: 50%;
+  position: absolute;
+  top: 80px;
+  right: 0px;
+  left: 0px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 10px;
+  color: #fff;
+  opacity: 1;
+  z-index: 10;
+  &_notice {
+    background: rgb(27, 209, 158);
+  }
+  &_alert {
+    background: red;
+  }
+}
 // ================================
