@@ -10,4 +10,18 @@ class UsersController < ApplicationController
       end
     end
   end
+
+  def signup
+    @user = User.new
+  end
+
+  def create
+    @user = User.new(signup_params)
+  end
+
+  private
+  def signup_params
+    signup_params = params.require(:user).permit(:name, :password, :faculty_id, :department_id, :seminar_id)
+  end
+
 end

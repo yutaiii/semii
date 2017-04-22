@@ -1,0 +1,43 @@
+<div class="signup_container">
+  <h2 class="title">ユーザー登録</h2>
+  <div class="form_container">
+    <%= form_for @user, url: {action: 'signup'} do |f| %>
+    <dl>
+      <dt>
+        ユーザー名
+        <span class="form_message"></span>
+      </dt>
+      <dd><%= f.text_field :name, class: 'form_textfield', placeholder: 'ユーザー名' %></dd>
+      <dt>
+        パスワード
+        <span class="form_message"></span>
+      </dt>
+      <dd><%= f.text_field :password, class: 'form_textfield', placeholder: 'パスワード' %></dd>
+      <dt>
+        パスワード確認
+        <span class="form_message"></span>
+      </dt>
+      <dd><%= f.text_field :password, class: 'form_textfield', placeholder: 'パスワード確認' %></dd>
+      <dt>
+        学部
+        <span class="form_message"></span>
+      </dt>
+      <dd><%= f.text_field :faculty_id, class: 'form_textfield', placeholder: '学部名' %></dd>
+      <dt>
+        学科
+        <span class="form_message"></span>
+      </dt>
+      <dd><%= f.text_field :department_id, class: 'form_textfield', placeholder: '学科名' %></dd>
+      <dt>
+        ゼミ名
+        <span class="form_message"></span>
+      </dt>
+      <dd><%= f.text_field :seminar_id, class: 'form_textfield', placeholder: 'ゼミ名' %></dd>
+
+      <div class="form_btn_wrapper">
+        <%= f.submit '新規登録', class: 'button form_btn_submit' %>
+      </div>
+    </dl>
+    <% end %>
+  </div>
+</div>
