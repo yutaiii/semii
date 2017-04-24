@@ -72,3 +72,5 @@ ja:
           email: メールアドレス
           password: パスワード
           password_confirmation: パスワード確認
+          faculty_id: 学部
+          department_id: 学科

@@ -19,7 +19,7 @@
         </div>
 
         <div class="field">
-          <%= f.password_field :password_confirm,  class: 'form_textfield', autocomplete: "off", placeholder: 'パスワード確認', presence: true %>
+          <%= f.password_field :password_confirmation,  class: 'form_textfield', autocomplete: "off", placeholder: 'パスワード確認', presence: true %>
         </div>
 
         <div class="field">
@@ -30,16 +30,9 @@
           <%= f.text_field :department_id,  class: 'form_textfield', autocomplete: "off", placeholder: '学科', presence: true %>
         </div>
 
-        <% if devise_mapping.rememberable? -%>
-          <div class="field">
-            <%= f.check_box :remember_me %>
-            <%= f.label 'ユーザー名とパスワードを記憶する' %>
-          </div>
           <div class="form_btn_wrapper">
             <%= f.submit '新規等録', class: 'button form_btn_submit' %>
           </div>
-
-        <% end %>
 
         <%= render "devise/shared/links" %>
 
