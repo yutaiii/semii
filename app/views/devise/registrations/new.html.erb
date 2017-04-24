@@ -19,11 +19,15 @@
         </div>
 
         <div class="field">
+          <%= f.password_field :password_confirm,  class: 'form_textfield', autocomplete: "off", placeholder: 'パスワード確認', presence: true %>
+        </div>
+
+        <div class="field">
           <%= f.text_field :faculty_id,  class: 'form_textfield', autocomplete: "off", placeholder: '学部', presence: true %>
         </div>
 
         <div class="field">
-          <%= f.password_field :department_id,  class: 'form_textfield', autocomplete: "off", placeholder: '学科', presence: true %>
+          <%= f.text_field :department_id,  class: 'form_textfield', autocomplete: "off", placeholder: '学科', presence: true %>
         </div>
 
         <% if devise_mapping.rememberable? -%>
