@@ -4,11 +4,11 @@
     <div class="form_container">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field">
-            <%= f.text_field :name, class: 'form_textfield', autofocus: true, placeholder: 'ユーザー名', presence: true %>
+            <%= f.text_field :name, class: 'form_textfield', autofocus: true, placeholder: 'ユーザー名', presence: true, required: true %>
         </div>
 
         <div class="field">
-            <%= f.password_field :password,  class: 'form_textfield', autocomplete: "off", placeholder: 'パスワード', presence: true %>
+            <%= f.password_field :password,  class: 'form_textfield', autocomplete: "off", placeholder: 'パスワード', presence: true, required: true %>
         </div>
 
         <% if devise_mapping.rememberable? -%>
