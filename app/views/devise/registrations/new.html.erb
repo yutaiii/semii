@@ -5,19 +5,36 @@
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= devise_error_messages! %>
-        <ol>
-          <li><%= f.text_field :name, class: 'form_textfield', placeholder: 'ユーザー名' %></li>
-          <li><%= f.text_field :password, class: 'form_textfield', placeholder: 'パスワード' %></li>
-          <li><%= f.text_field :faculty_id, class: 'form_textfield', placeholder: '学部' %></li>
-          <li><%= f.text_field :department_id, class: 'form_textfield', placeholder: '学科' %></li>
+        <div class="field">
+          <%= f.text_field :name, class: 'form_textfield', autofocus: true, placeholder: 'ユーザー名', presence: true %>
+        </div>
+
+        <div class="field">
+          <%= f.password_field :password,  class: 'form_textfield', autocomplete: "off", placeholder: 'パスワード', presence: true %>
+        </div>
+
+        <div class="field">
+          <%= f.text_field :faculty_id,  class: 'form_textfield', autocomplete: "off", placeholder: '学部', presence: true %>
+        </div>
+
+        <div class="field">
+          <%= f.password_field :department_id,  class: 'form_textfield', autocomplete: "off", placeholder: '学科', presence: true %>
+        </div>
+
+        <% if devise_mapping.rememberable? -%>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label 'ユーザー名とパスワードを記憶する' %>
+          </div>
           <div class="form_btn_wrapper">
             <%= f.submit '新規等録', class: 'button form_btn_submit' %>
           </div>
-        </ol>
+
+        <% end %>
+
+        <%= render "devise/shared/links" %>
 
       <% end %>
-
-      <%= render "devise/shared/links" %>
 
     </div>
   </div>
