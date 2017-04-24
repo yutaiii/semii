@@ -7,4 +7,10 @@ class User < ActiveRecord::Base
   validates :department_id, presence: true
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+def email_required?
+  false
+end
+def password_required?
+  false
+end
 end
