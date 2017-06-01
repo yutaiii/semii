@@ -10,15 +10,17 @@
 
 #facultyテーブルに学部をセット
 
-  Faculty.create(name: '人文学部')
-  Faculty.create(name: '外国語学部')
-  Faculty.create(name: '経済学部')
-  Faculty.create(name: '経営学部')
-  Faculty.create(name: '法学部')
-  Faculty.create(name: '総合政策学部')
-  Faculty.create(name: '理工学部')
-  Faculty.create(name: '国際教養学部')
-  Faculty.create(name: '短期大学部')
+  Faculty.first_or_create([
+      {id: 1, name: '人文学部'},
+      {id: 2, name: '外国語学部'},
+      {id: 3, name: '経済学部'},
+      {id: 4, name: '経営学部'},
+      {id: 5, name: '法学部'},
+      {id: 6, name: '総合政策学部'},
+      {id: 7, name: '理工学部'},
+      {id: 8, name: '国際教養学部'},
+      {id: 9, name: '短期大学部'}
+    ])
 
 #departmentテーブルに学科をセット
 
