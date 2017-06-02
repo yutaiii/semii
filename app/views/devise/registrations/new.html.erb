@@ -27,7 +27,7 @@
         </div>
 
         <div class="field">
-          <%= f.text_field :department_id,  class: 'form_textfield', autocomplete: "off", placeholder: '学科', presence: true %>
+          <%= f.collection_select(:department_id, Department.all, :id, :name, {}, {:class => 'form_selectbox'}) %>
         </div>
 
           <div class="form_btn_wrapper">
