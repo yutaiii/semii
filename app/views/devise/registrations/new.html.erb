@@ -1,5 +1,5 @@
 <div class="image_background">
-  <div class="signin_container">
+  <div class="signup_container">
     <h2 class="title">新規等録</h2>
     <div class="form_container">
 
@@ -23,18 +23,16 @@
         </div>
 
         <div class="field">
-          <%= f.text_field :faculty_id,  class: 'form_textfield', autocomplete: "off", placeholder: '学部', presence: true %>
+          <%= f.collection_select(:faculty_id, Faculty.all, :id, :name, {}, {:class => 'form_selectbox'}) %>
         </div>
 
         <div class="field">
-          <%= f.text_field :department_id,  class: 'form_textfield', autocomplete: "off", placeholder: '学科', presence: true %>
+          <%= f.collection_select(:department_id, Department.all, :id, :name, {}, {:class => 'form_selectbox'}) %>
         </div>
 
           <div class="form_btn_wrapper">
             <%= f.submit '新規等録', class: 'button form_btn_submit' %>
           </div>
-
-        <%= render "devise/shared/links" %>
 
       <% end %>
 
