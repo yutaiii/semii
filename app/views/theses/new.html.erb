@@ -1,0 +1,19 @@
+
+<div class="thesis_upload_container">
+
+  <h2 class="title">卒論アップロード</h2>
+  <div class="form_container">
+    
+  <%= form_for @thesis, :url => {:controller => 'theses', :action => 'create'} do |f| %>
+    <%= f.text_field :title, class: 'form_textfield', autofocus: true, placeholder: 'タイトル', presence: true %>
+    <%= f.text_field :key_words, class: 'form_textfield', autofocus: true, placeholder: 'キーワード', presence: true %>
+    <%= f.text_area :description, class: 'form_area', autofocus: true, placeholder: '要約', presence: true %>
+    <%= f.file_field :date %>
+    <div class="form_btn_wrapper">
+      <%= f.submit 'アップロード', class: 'button form_btn_submit' %>
+    </div>
+  <% end %>
+
+  </div>
+
+</div>

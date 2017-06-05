@@ -1,0 +1,24 @@
+// Place all the styles related to the theses controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'variable';
+
+.thesis{
+  &_upload_container{
+    height: 450px;
+    top: 50px;
+    width: 500px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    padding: 15px 30px;
+    border-radius: 10px;
+    // @include boxBorder;
+    background: #f2f2f2;
+    z-index: 2;
+  }
+}
+
+
