@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   root 'mypages#index'
+  get '/upload' => 'theses#new'
+  post '/thesis' => 'theses#create'
   devise_for :users, controllers: {
    sessions: 'users/sessions'
  }
+ post '/post/add' => 'posts#add'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

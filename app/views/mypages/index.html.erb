@@ -21,27 +21,37 @@
     </div>
     <div class="db_menu">
       <div class="db_menu_board db_board">
-        <input type="text" class="form_textfield">
-        <textarea class="form_textarea"></textarea>
+        <%= form_for @post, :url => {:action => 'add', :controller => 'posts'} do |f| %>
+          <%= f.text_field :title, class: 'form_textfield', placeholder: 'タイトルを記入してください。', required: 'required' %>
+          <%= f.text_area :content, class: 'form_textarea', placeholder: '投稿内容を記入してください。', required: 'required' %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+          <%= f.hidden_field :seminar_id, value: current_user.seminar_id %>
+          <%= f.submit '投稿する', class: 'form_btn form_btn_submit button' %>
+        <% end %>
       </div>
     </div>
   </div>
   <div class="db_half">
     <div class="db_bulletinboard db_board">
       <ul>
-        <% 6.times do %>
-          <li class="db_bulletinboard_post">
-            <%= link_to '#' do %>
-              <h3 class="db_board_title">タイトル</h3>
-              <p>投稿日</p>
-              <p>
-                <% 10.times do %>
-                投稿内容です。
-                <% end %>
-              </p>
-            <% end %>
-          </li>
+        <% if @posts.count > 0 %>
+          <% @posts.each do |post| %>
+            <li class="db_bulletinboard_post">
+              <%= link_to '#' do %>
+                <h3 class="db_board_title">【<%= post.title %>】</h3>
+                <p>
+                  <%= time_ago_in_words(post.created_at) %>前
+                  <%= '投稿者: '+post.user.name %>
+                </p>
+                <p>
+                  <%= simple_format(h(post.content)) %>
+                </p>
+              <% end %>
+            </li>
           <% end %>
+        <% else %>
+          <li>現在投稿はありません。</li>
+        <% end %>
       </ul>
     </div>
   </div>
