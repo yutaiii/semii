@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'mypages#index'
   get '/upload' => 'theses#new'
-  post '/thesis' => 'theses#create'
+  post '/thesis' => 'theses#upload'
   devise_for :users, controllers: {
    sessions: 'users/sessions'
  }
