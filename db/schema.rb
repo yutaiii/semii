@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20170614051534) do
 
   create_table "departments", force: :cascade do |t|
@@ -60,9 +61,9 @@ ActiveRecord::Schema.define(version: 20170614051534) do
     t.integer  "graduation_id"
     t.string   "key_words"
     t.text     "description"
-    t.text     "data"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.binary   "thesis_data"
   end
 
   create_table "users", force: :cascade do |t|
