@@ -30,7 +30,7 @@ class ThesesController < ApplicationController
           flash[:alert] = "#{filename}をアップロードしました。"
           render :template => "mypages/index"
         else
-          flash[:alert] = 'upload error'
+          flash[:alert] = 'アップロードに失敗しました。もう一度やり直してください。'
           redirect_to(action: :new)
         end
     end
