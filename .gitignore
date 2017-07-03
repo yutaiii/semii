@@ -11,3 +11,5 @@
 /log/*
 !/log/.keep
 /tmp
+/db/schema.rb
+/my_database2_development
