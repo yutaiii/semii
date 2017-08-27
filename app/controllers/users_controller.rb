@@ -10,4 +10,8 @@ class UsersController < ApplicationController
       end
     end
   end
+  def changeSeminarInfo
+    if request.post?
+    end
+  end
 end
