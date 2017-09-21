@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # get 'users/edit'
+
   root 'mypages#index'
   get '/upload' => 'theses#new'
   post '/thesis' => 'theses#upload'

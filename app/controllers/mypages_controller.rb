@@ -11,6 +11,8 @@ class MypagesController < ApplicationController
       end
       @department = Department.find(current_user.department_id)
       @faculty = Faculty.find(current_user.faculty_id)
+      teacherId = Seminar.find(current_user.seminar_id).teacher_id
+      @teacher = Teacher.find(teacherId)
     else
       redirect_to(new_user_session_path)
     end

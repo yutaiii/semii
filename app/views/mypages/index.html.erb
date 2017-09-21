@@ -5,7 +5,7 @@
       <div class="db_seminar_board db_board">
         <h2 class="db_board_title"><%= @seminarName %>ゼミ用マイページ</h2>
         <p class="db_board_explain">
-          <%= @department.name %>学部 <%= @faculty.name %>学科 / 〇〇教授 / ゼミ生：〇人
+          <%= @faculty.name %> / <%= @department.name %>  / <%= @teacher.name %>教授
         </p>
       </div>
     </div>
@@ -16,7 +16,7 @@
             <%= link_to '卒論を投稿する', upload_path %>
           </li>
           <li class="db_menu_list">
-            <%= link_to 'マイページ情報編集', upload_path %>
+            <%= link_to 'マイページ情報編集', edit_user_registration_path %>
           </li>
         </ul>
       </div>

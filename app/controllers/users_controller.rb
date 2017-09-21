@@ -1,17 +1,14 @@
 class UsersController < ApplicationController
-  def signin
-    @user = User.new
-    if request.post?
-      user = User.where(name: params[:name], password: params[:password])
-      if user.present?
-        redirect_to root_path
-      else
-        redirect_to users_sign_in_path
-      end
-    end
-  end
-  def changeSeminarInfo
-    if request.post?
+  def edit
+    if user_signed_in?
+      @user = User.find(current_user.id)
+      @faculty = Faculty.all
+      @department = Faculty.all
+      @teacher = Teacher.all
+      seminar = Seminar.find(current_user.seminar_id)
+      @seminarTeacher = Teacher.find(seminar.teacher_id)
+    else
+      redirect_to(root_path)
     end
   end
 end
