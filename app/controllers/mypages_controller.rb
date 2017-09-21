@@ -1,8 +1,9 @@
 class MypagesController < ApplicationController
   def index
     if user_signed_in?
+      @maxNumberOfPost = 5
       @post = Post.new
-      @posts = Post.where(seminar_id: current_user.seminar_id).order('created_at desc').page(params[:page]).per(5)
+      @posts = Post.where(seminar_id: current_user.seminar_id).order('created_at desc').page(params[:page]).per(@maxNumberOfPost)
       if current_user.seminar_id.nil?
         @seminarName = '〇〇'
       else
