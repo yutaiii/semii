@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  # get 'users/edit'
+
   root 'mypages#index'
   get '/upload' => 'theses#new'
   post '/thesis' => 'theses#upload'
+  get '/post/view' => 'posts#view'
   devise_for :users, controllers: {
    sessions: 'users/sessions'
  }

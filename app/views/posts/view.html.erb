@@ -1,0 +1,25 @@
+<div class="db_bulletinboard db_board">
+  <ul>
+    <% if @posts.count > 0 %>
+      <center>
+        <li>全 <%= @postsCount %>件</li>
+      </center>
+      <% @posts.each do |post| %>
+        <li class="db_bulletinboard_post">
+          <h3 class="db_board_title">【<%= post.title %>】</h3>
+          <p>
+            <%= time_ago_in_words(post.created_at) %>前
+          </p>
+          <p>
+            <%= simple_format(h(post.content)) %>
+          </p>
+        </li>
+      <% end %>
+    <% else %>
+      <li>現在投稿はありません。</li>
+    <% end %>
+  </ul>
+  <center>
+    <%= paginate @posts %>
+  </center>
+</div>

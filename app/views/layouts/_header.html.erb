@@ -9,10 +9,13 @@
 
       <% if user_signed_in? %>
         <li class="header_menu_elements">
+          <%= link_to 'マイページ', root_path %>
+        </li>
+        <li class="header_menu_elements">
           <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
         </li>
         <li class="header_menu_elements">
-          <%= link_to '◯ ◯ ゼミ', '#' %>
+          <%= link_to @seminarName + 'ゼミ', '#' %>
         </li>
       <% else %>
         <li class="header_menu_elements">

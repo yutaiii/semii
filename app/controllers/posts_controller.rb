@@ -9,6 +9,11 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
+  def view
+    @postsCount = Post.where(seminar_id: current_user.seminar_id).count
+    @posts = Post.where(seminar_id: current_user.seminar_id).order(created_at: 'DESC').page(params[:page]).per(5)
+  end
+
 
 private
   def post_params

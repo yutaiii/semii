@@ -3,9 +3,9 @@
   <div class="db_half">
     <div class="db_seminar">
       <div class="db_seminar_board db_board">
-        <h2 class="db_board_title">〇〇ゼミ用マイページ</h2>
+        <h2 class="db_board_title"><%= @seminarName %>ゼミ用マイページ</h2>
         <p class="db_board_explain">
-          〇〇学部〇〇学科 / 〇〇教授 / ゼミ生：〇人
+          <%= @faculty.name %> / <%= @department.name %>  / <%= @teacher.name %>教授
         </p>
       </div>
     </div>
@@ -15,11 +15,12 @@
           <li class="db_menu_list">
             <%= link_to '卒論を投稿する', upload_path %>
           </li>
-          <% 5.times do %>
-            <li class="db_menu_list">
-              <%= link_to 'メニュー', '#' %>
-            </li>
-            <% end %>
+          <li class="db_menu_list">
+            <%= link_to 'マイページ情報編集', edit_user_registration_path %>
+          </li>
+          <li class="db_menu_list">
+            <%= link_to '投稿を全て見る', post_view_path %>
+          </li>
         </ul>
       </div>
     </div>
@@ -41,22 +42,22 @@
         <% if @posts.count > 0 %>
           <% @posts.each do |post| %>
             <li class="db_bulletinboard_post">
-              <%= link_to '#' do %>
                 <h3 class="db_board_title">【<%= post.title %>】</h3>
                 <p>
                   <%= time_ago_in_words(post.created_at) %>前
-                  <%= '投稿者: '+post.user.name %>
                 </p>
                 <p>
                   <%= simple_format(h(post.content)) %>
                 </p>
-              <% end %>
             </li>
           <% end %>
         <% else %>
           <li>現在投稿はありません。</li>
         <% end %>
       </ul>
+      <% if @posts.count > @maxNumberOfPost %>
+        <%= link_to '投稿を全てみる>>', post_view_path %>
+      <% end %>
     </div>
   </div>
 </div>

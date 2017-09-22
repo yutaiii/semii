@@ -1,0 +1,18 @@
+<div class="edit_container">
+  <div class="edit_box">
+    <h2>ユーザー情報編集</h2>
+    <div class="form_container">
+      <%= form_for(@user, url: users_edit_path) do |f| %>
+      <div class="field">
+        <%= f.text_field :name, class: 'form_textfield' %>
+      </div>
+      <div class="field">
+          <%= f.collection_select(:faculty_id, @faculty, :id, :name, {}, {:class => 'form_selectbox'}) %>
+      </div>
+      <div class="field">
+          <%= f.collection_select(:department_id, @department, :id, :name, {}, {:class => 'form_selectbox'}) %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

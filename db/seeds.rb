@@ -44,3 +44,11 @@
       {id: 17, name: '国際教養学科', faculty_id: 8},
       {id: 18, name: '英語科', faculty_id: 9}
     ])
+
+    Teacher.first_or_create([
+      {id:1, name:'デヴィッド・ポッター'}
+      ])
+
+    Seminar.first_or_create([
+      {id: 1, name: 'ポッター', teacher_id: 1}
+      ])
